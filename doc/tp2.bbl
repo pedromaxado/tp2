@@ -1,0 +1,66 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.7 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\sortlist[entry]{nty/global/}
+  \entry{testsite}{online}{}
+    \name{author}{1}{}{%
+      {{hash=IG}{%
+         family={Inc.},
+         family_i={I\bibinitperiod},
+         given={Google},
+         given_i={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{IG1}
+    \strng{fullhash}{IG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{title}{Google}
+    \verb{url}
+    \verb http://www.google.com.br
+    \endverb
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+  \endentry
+
+  \entry{facebook}{online}{}
+    \name{author}{1}{}{%
+      {{hash=ZM}{%
+         family={Zuckerberk},
+         family_i={Z\bibinitperiod},
+         given={Mark},
+         given_i={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZM1}
+    \strng{fullhash}{ZM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{title}{Facebook}
+    \verb{url}
+    \verb http://www.facebook.com
+    \endverb
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+  \endentry
+\endsortlist
+\endinput
