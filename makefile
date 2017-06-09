@@ -1,14 +1,14 @@
 CC = gcc
 
-CFLAGS = -g -Wall -Wextra -Werror -pedantic -O2 -flto -std=c99
+CFLAGS = -Iheaders -g -Wall -Wextra -Werror -pedantic -std=c99
 
 RM = rm -f
 
 VPATH = src
 
-OBJS = main.o
+OBJS = main.o inverted_index.o
 
-MAIN = tp1
+MAIN = tp2
 
 $(MAIN): $(OBJS)
 	@echo ""
