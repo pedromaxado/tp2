@@ -1,17 +1,22 @@
 #include <stdio.h>
-
-#define MAX 256
+#include <string.h>
+#include <inverted_index.h>
 
 int main() {
 
-    int n;
-    char chats[MAX];
-    char index[MAX];
+    int n, memSize;
+    char chats[PATH_SIZE];
+    char index[PATH_SIZE];
 
     scanf("%d", &n);
+    scanf("%d", &memSize);
 
     scanf("%s", chats);
     scanf("%s", index);
+
+    strcat( index, "index" );
+
+    make_index( n, chats, index );
 
     return 0;
 }
