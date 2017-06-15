@@ -1,4 +1,6 @@
-#ifndef QUICK_SORT_H_
-#define QUICK_SORT_H_
+#ifndef EXTERNAL_SORT_H_
+#define EXTERNAL_SORT_H_
+
+void external_sort();
 
 #endif

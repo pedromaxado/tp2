@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 #include <inverted_index.h>
 
 int main() {
@@ -14,9 +13,7 @@ int main() {
     scanf("%s", chats);
     scanf("%s", index);
 
-    strcat( index, "index" );
-
-    make_index( n, chats, index );
+    make_index( n, memSize, chats, index );
 
     return 0;
 }

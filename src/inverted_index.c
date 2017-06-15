@@ -2,13 +2,25 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdbool.h>
+#include <external_sort.h>
 #include <inverted_index.h>
+#include <file_handler.h>
+
+#define TMP_PATH "./tmp/"
+#define AUX_INDEX_PATH "./tmp/aux_index"
+#define II_SIZE sizeof(struct inverted_index)
 
 struct inverted_index {
     char *key;
     int file,
         freq,
         pos;
+};
+
+struct buffer {
+    InvertedIndex* buf;
+    size_t size;
 };
 
 InvertedIndex new_InvertedIndex( char* _key, int _file, int _freq, int _pos ) {
@@ -22,76 +34,75 @@ InvertedIndex new_InvertedIndex( char* _key, int _file, int _freq, int _pos ) {
     return i;
 }
 
-void updateFrequency( const char* word, int fileNumber ) {
-
-    FILE* fp;
-
-    char *wordFileNumb = ( char* ) malloc( MAX_FILES * sizeof(char) );
-    char *wordFreqFile = ( char* ) malloc( PATH_SIZE * sizeof(char) );
-
-    int freq = 1;
-
-    wordFreqFile[0] = '\0';
-
-    sprintf(wordFileNumb, "%d", fileNumber);
-
-    strcat( wordFreqFile, TMP_PATH     );
-    strcat( wordFreqFile, word         );
-    strcat( wordFreqFile, wordFileNumb );
-
-    if ( access( wordFreqFile, R_OK ) == 0 ) {
-        fp = fopen( wordFreqFile, "r" );
-
-        fscanf( fp, "%d", &freq );
-        freq++;
-
-        fclose(fp);
-    }
-
-    fp = fopen( wordFreqFile, "w" );
-    printf("%d\n", freq);
-    fprintf(fp, "%d\n", freq);
-
-    free(wordFileNumb);
-    free(wordFreqFile);
-    fclose(fp);
+void delete_InvertedIndex( InvertedIndex i ) {
+    free(i->key);
+    free(i);
 }
 
-void make_index( int _n, const char* _chats, const char* _index ) {
+bool compare( InvertedIndex a, InvertedIndex b ) {
 
-    FILE *indexFile, *chatFile;
+    if ( strcmp(a->key, b->key) < 0 ) {
+        return true;
+    }
+    else if ( strcmp(a->key, b->key) > 0 ) {
+        return false;
+    }
+    else {
+        if ( a->file < b->file ) {
+            return true;
+        }
+        else if ( a->file > b->file ) {
+            return false;
+        }
+        else {
+            if ( a->pos < b->pos  ) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+}
 
-    char *chatFileNumb = ( char* ) malloc( MAX_FILES * sizeof(char) );
-    char *chatFileName = ( char* ) malloc( PATH_SIZE * sizeof(char) );
+void write_partial_ii( FILE* fp, InvertedIndex i ) {
+    fprintf(fp, "%s %d %d\n", i->key, i->file, i->pos);
+}
 
-    char *word = ( char* ) malloc( STRING_SIZE * sizeof(char) );
+void sort_chats( int _n, int _memSize, const char* _chatsPaths ) {
 
-    chatFileName[0] = '\0';
+    FILE *chatFile, *outputs;
+    char *chatPath, *outPath, *chatFileNumb, *word;
+    int chunkSize, memCount, i;
 
-    if ( (indexFile = fopen(_index, "w")) == NULL )
-        return;
+    InvertedIndex* iiArray;
 
-    for ( int i = 1; i <= _n; i++ ) {
+    chunkSize = _memSize / II_SIZE;
+
+    chatFileNumb = ( char* ) malloc( MAX_FILES * sizeof(char) );
+    chatPath = ( char* ) malloc( PATH_SIZE * sizeof(char) );
+
+    word = ( char* ) malloc( STRING_SIZE * sizeof(char) );
+
+    chatPath[0] = '\0';
+
+    for ( i = 0; i < _n; i++ ) {
         sprintf( chatFileNumb, "%d", i );
 
-        strcat ( chatFileName, _chats       );
-        strcat ( chatFileName, chatFileNumb );
+        strcat ( chatPath, _chatsPaths  );
+        strcat ( chatPath, chatFileNumb );
 
-        if ( (chatFile = fopen(chatFileName, "r")) == NULL )
-            return;
+        chatFile = open_file(chatPath, "r");
 
-        while ( fscanf(chatFile, "%s", word) != EOF ) {
-            fprintf(indexFile, "%s,%d,1,%ld\n", word, i, ftell(chatFile)-strlen(word));
-            updateFrequency( word, i );
+        memCount = 0;
+
+        while ( fscanf(chatFile, "%s", word) != EOF && memCount <= chunkSize ) {
+
         }
-
-        fclose(chatFile);
-        chatFileName[0] = '\0';
     }
+}
 
-    fclose(indexFile);
+void make_index( int _n, const int _memSize, const char* _chatsPaths, const char* _indexPath ) {
 
-    free(chatFileNumb);
-    free(chatFileName);
-    free(word);
+    sort_chats( _n, _memSize, _chatsPaths );
 }
