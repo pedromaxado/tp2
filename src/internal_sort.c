@@ -25,11 +25,11 @@ int partition( InvertedIndex* vec, int p, int r ) {
     return i+1;
 }
 
-void quickSort( InvertedIndex* vec, int p, int r ) {
+void quick_sort( InvertedIndex* vec, int p, int r ) {
 
     if ( p < r ) {
         int q = partition( vec, p, r );
-        quickSort( vec, p, q-1 );
-        quickSort( vec, q+1, r );
+        quick_sort( vec, p, q-1 );
+        quick_sort( vec, q+1, r );
     }
 }

@@ -6,7 +6,7 @@ RM = rm -f
 
 VPATH = src
 
-OBJS = main.o inverted_index.o
+OBJS = main.o inverted_index.o file_handler.o internal_sort.o external_sort.o
 
 MAIN = tp2
 

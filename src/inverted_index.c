@@ -3,13 +3,11 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdbool.h>
+#include <sys/stat.h>
+#include <file_handler.h>
+#include <internal_sort.h>
 #include <external_sort.h>
 #include <inverted_index.h>
-#include <file_handler.h>
-
-#define TMP_PATH "./tmp/"
-#define AUX_INDEX_PATH "./tmp/aux_index"
-#define II_SIZE sizeof(struct inverted_index)
 
 struct inverted_index {
     char *key;
@@ -18,12 +16,15 @@ struct inverted_index {
         pos;
 };
 
-struct buffer {
-    InvertedIndex* buf;
-    size_t size;
-};
+InvertedIndex new_empty() {
+    InvertedIndex i = ( InvertedIndex ) malloc( sizeof( struct inverted_index ) );
 
-InvertedIndex new_InvertedIndex( char* _key, int _file, int _freq, int _pos ) {
+    i->key = ( char* ) malloc( STRING_SIZE * sizeof(char) );
+
+    return i;
+}
+
+InvertedIndex new_ii( char* _key, int _file, int _freq, int _pos ) {
     InvertedIndex i = ( InvertedIndex ) malloc( sizeof( struct inverted_index ) );
 
     strcpy(i->key, _key);
@@ -34,9 +35,37 @@ InvertedIndex new_InvertedIndex( char* _key, int _file, int _freq, int _pos ) {
     return i;
 }
 
-void delete_InvertedIndex( InvertedIndex i ) {
+void delete_ii( InvertedIndex i ) {
     free(i->key);
     free(i);
+}
+
+char* getKey( InvertedIndex i ) {
+    return i->key;
+}
+
+int getFile( InvertedIndex i ) {
+    return i->file;
+}
+
+int getFreq( InvertedIndex i ) {
+    return i->freq;
+}
+
+int getPos( InvertedIndex i ) {
+    return i->pos;
+}
+
+void setFile( InvertedIndex i, int file ) {
+    i->file = file;
+}
+
+void setFreq( InvertedIndex i, int freq ) {
+    i->freq = freq;
+}
+
+void setPos( InvertedIndex i, int pos ) {
+    i->pos = pos;
 }
 
 bool compare( InvertedIndex a, InvertedIndex b ) {
@@ -65,44 +94,20 @@ bool compare( InvertedIndex a, InvertedIndex b ) {
     }
 }
 
-void write_partial_ii( FILE* fp, InvertedIndex i ) {
-    fprintf(fp, "%s %d %d\n", i->key, i->file, i->pos);
-}
+void make_index( int *_n, int *_memSize, const char* _chatsPaths, const char* _indexPath ) {
 
-void sort_chats( int _n, int _memSize, const char* _chatsPaths ) {
+    int fileCount = sort_chats( _n, _memSize, _chatsPaths );
 
-    FILE *chatFile, *outputs;
-    char *chatPath, *outPath, *chatFileNumb, *word;
-    int chunkSize, memCount, i;
+    merge_files( fileCount );
 
-    InvertedIndex* iiArray;
+    FILE* indexFile;
 
-    chunkSize = _memSize / II_SIZE;
+    char* indexFilePath = ( char* ) malloc( PATH_SIZE * sizeof( char ) );
 
-    chatFileNumb = ( char* ) malloc( MAX_FILES * sizeof(char) );
-    chatPath = ( char* ) malloc( PATH_SIZE * sizeof(char) );
+    sprintf(indexFilePath, "%sindex", _indexPath);
 
-    word = ( char* ) malloc( STRING_SIZE * sizeof(char) );
+    indexFile = open_file(indexFilePath, "w");
 
-    chatPath[0] = '\0';
-
-    for ( i = 0; i < _n; i++ ) {
-        sprintf( chatFileNumb, "%d", i );
-
-        strcat ( chatPath, _chatsPaths  );
-        strcat ( chatPath, chatFileNumb );
-
-        chatFile = open_file(chatPath, "r");
-
-        memCount = 0;
-
-        while ( fscanf(chatFile, "%s", word) != EOF && memCount <= chunkSize ) {
-
-        }
-    }
-}
-
-void make_index( int _n, const int _memSize, const char* _chatsPaths, const char* _indexPath ) {
-
-    sort_chats( _n, _memSize, _chatsPaths );
+    close_file(indexFile);
+    free(indexFilePath);
 }

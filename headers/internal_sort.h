@@ -3,6 +3,6 @@
 
 #include <inverted_index.h>
 
-void quickSort( InvertedIndex* vec, int p, int r );
+void quick_sort( InvertedIndex* vec, int p, int r );
 
 #endif
