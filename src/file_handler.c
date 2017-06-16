@@ -6,10 +6,8 @@ FILE* open_file( char* path, char* mode ) {
 
     FILE* fp;
 
-    if ( (fp = fopen(path, mode)) == NULL ) {
-        printf("deu ruim %s\n", path);
+    if ( (fp = fopen(path, mode)) == NULL )
         exit(EXIT_FAILURE);
-    }
 
     return fp;
 }
