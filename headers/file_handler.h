@@ -8,8 +8,8 @@ FILE* open_file( char* path, char* mode );
 
 void close_file( FILE* fp );
 
-void write_ii( FILE* fp, InvertedIndex i );
+void write_ii( FILE* fp, IIndex i );
 
-void write_partial_ii( FILE* fp, InvertedIndex i );
+void write_partial_ii( FILE* fp, IIndex i );
 
 #endif

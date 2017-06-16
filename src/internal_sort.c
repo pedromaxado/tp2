@@ -1,16 +1,16 @@
 #include <inverted_index.h>
 #include <internal_sort.h>
 
-void swap( InvertedIndex* a, InvertedIndex* b ) {
-    InvertedIndex aux = *a;
+void swap( IIndex* a, IIndex* b ) {
+    IIndex aux = *a;
 
     *a = *b;
     *b = aux;
 }
 
-int partition( InvertedIndex* vec, int p, int r ) {
+int partition( IIndex* vec, int p, int r ) {
 
-    InvertedIndex pivot = vec[r];
+    IIndex pivot = vec[r];
     int i = p-1;
 
     for( int j = p; j <= r-1; j++ ) {
@@ -25,7 +25,7 @@ int partition( InvertedIndex* vec, int p, int r ) {
     return i+1;
 }
 
-void quick_sort( InvertedIndex* vec, int p, int r ) {
+void quick_sort( IIndex* vec, int p, int r ) {
 
     if ( p < r ) {
         int q = partition( vec, p, r );

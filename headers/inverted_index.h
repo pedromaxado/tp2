@@ -9,32 +9,32 @@
 #define MAX_FILES 16
 #define II_SIZE 32
 
-typedef struct inverted_index* InvertedIndex;
+typedef struct inverted_index* IIndex;
 
-InvertedIndex new_ii( char* _key, int _file, int _freq, int _pos );
+IIndex new_ii( char* _key, int _file, int _freq, int _pos );
 
-InvertedIndex new_empty();
+IIndex new_empty();
 
-void delete_ii( InvertedIndex i );
+void delete_ii( IIndex i );
 
 void make_index( int *_n, int *_memSize, const char *_chats, const char *_index );
 
-char* getKey ( InvertedIndex i );
+char* getKey ( IIndex i );
 
-int getFile  ( InvertedIndex i );
+int* getFile  ( IIndex i );
 
-int getFreq  ( InvertedIndex i );
+int* getFreq  ( IIndex i );
 
-int getPos   ( InvertedIndex i );
+int* getPos   ( IIndex i );
 
-void setKey  ( InvertedIndex i, char* key );
+void setKey  ( IIndex i, char* key );
 
-void setFile ( InvertedIndex i, int file  );
+void setFile ( IIndex i, int file  );
 
-void setFreq ( InvertedIndex i, int freq  );
+void setFreq ( IIndex i, int freq  );
 
-void setPos  ( InvertedIndex i, int pos   );
+void setPos  ( IIndex i, int pos   );
 
-bool compare( InvertedIndex a, InvertedIndex b );
+bool compare( IIndex a, IIndex b );
 
 #endif
