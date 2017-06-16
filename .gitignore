@@ -54,5 +54,4 @@ dkms.conf
 #executavel
 tp2
 toys.zip
-tests/toys/
-tests/toys/tmp/
+tests/
