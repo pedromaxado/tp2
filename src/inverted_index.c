@@ -149,6 +149,8 @@ void update_frequency( char* partialPath, char* indexPath ) {
 
 void make_index( int *_n, int *_memSize, const char* _chatsPaths, const char* _indexPath ) {
 
+    mkdir(TMP_PATH, 0777);
+
     int fileCount    = sort_chats  ( _n, _memSize, _chatsPaths );
     int partialIndex = merge_files ( fileCount );
 
@@ -156,7 +158,7 @@ void make_index( int *_n, int *_memSize, const char* _chatsPaths, const char* _i
          *partialFilePath = ( char* ) malloc( TMP_PATH_SIZE * sizeof( char ) );
 
     sprintf( partialFilePath, "%s%d", TMP_PATH, partialIndex );
-    sprintf( indexFilePath,   "%sindex_aux", _indexPath );
+    sprintf( indexFilePath,   "%sindex", _indexPath );
 
     update_frequency( partialFilePath, indexFilePath );
 
