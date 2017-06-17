@@ -151,7 +151,7 @@ void update_frequency( char* partialPath, char* indexPath ) {
     delete_ii( ii   );
 }
 
-void make_index( int *_n, int *_memSize, const char* _chatsPaths, const char* _indexPath ) {
+void make_index( int *_n, long long int *_memSize, const char* _chatsPaths, const char* _indexPath ) {
 
     mkdir(TMP_PATH, 0777);
 

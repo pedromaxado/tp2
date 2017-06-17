@@ -17,7 +17,7 @@ IIndex new_empty();
 
 void delete_ii( IIndex i );
 
-void make_index( int *_n, int *_memSize, const char *_chats, const char *_index );
+void make_index( int *_n, long long int *_memSize, const char *_chats, const char *_index );
 
 char* getKey ( IIndex i );
 

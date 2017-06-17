@@ -5,6 +5,6 @@
 
 int merge_files( const int _fileCount );
 
-int sort_chats( int *_n, int *_memSize, const char* _chatsPath );
+int sort_chats( int *_n, long long int *_memSize, const char* _chatsPath );
 
 #endif

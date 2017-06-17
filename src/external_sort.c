@@ -99,7 +99,7 @@ int merge_files( const int _fileCount ) {
     return endFileNum;
 }
 
-int sort_chats( int *_n, int *_memSize, const char* _chatsPath ) {
+int sort_chats( int *_n, long long int *_memSize, const char* _chatsPath ) {
 
     FILE *chatFile,
          *output;
@@ -109,8 +109,9 @@ int sort_chats( int *_n, int *_memSize, const char* _chatsPath ) {
 
     int i,
         chunk,
-        chunkSize   = *_memSize / II_SIZE,
         fileCounter = 0;
+
+    long long int chunkSize = *_memSize / II_SIZE;
 
     IIndex *iiArray = ( IIndex* ) malloc( chunkSize * sizeof( IIndex ) );
 
