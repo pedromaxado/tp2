@@ -28,8 +28,8 @@ int merge_files( const int _fileCount ) {
         outNum      = _fileCount,
         endFileNum  = ( _fileCount - 1 ) * 2;
 
-    IIndex i1 = new_empty(),
-           i2 = new_empty();
+    IIndex i1 = new_ii(),
+           i2 = new_ii();
 
     while ( chatTwoNum <= endFileNum ) {
 
@@ -116,7 +116,7 @@ int sort_chats( int *_n, long long int *_memSize, const char* _chatsPath ) {
     IIndex *iiArray = ( IIndex* ) malloc( chunkSize * sizeof( IIndex ) );
 
     for ( i = 0; i < chunkSize; i++ )
-        iiArray[i] = new_empty();
+        iiArray[i] = new_ii();
 
     for ( i = 1; i <= *_n; i++ ) {
         sprintf( chatPath, "%s%d", _chatsPath, i );

@@ -12,25 +12,13 @@
 struct inverted_index {
     char *key;
     int file,
-        freq,
         pos;
 };
 
-IIndex new_empty() {
+IIndex new_ii() {
     IIndex i = ( IIndex ) malloc( sizeof( struct inverted_index ) );
 
     i->key = ( char* ) malloc( STRING_SIZE * sizeof(char) );
-
-    return i;
-}
-
-IIndex new_ii( char* _key, int _file, int _freq, int _pos ) {
-    IIndex i = ( IIndex ) malloc( sizeof( struct inverted_index ) );
-
-    strcpy(i->key, _key);
-    i->file = _file;
-    i->freq = _freq;
-    i->pos  = _pos;
 
     return i;
 }
@@ -48,10 +36,6 @@ int* getFile( IIndex i ) {
     return &i->file;
 }
 
-int* getFreq( IIndex i ) {
-    return &i->freq;
-}
-
 int* getPos( IIndex i ) {
     return &i->pos;
 }
@@ -62,10 +46,6 @@ void setKey( IIndex i, char* key ) {
 
 void setFile( IIndex i, int file ) {
     i->file = file;
-}
-
-void setFreq( IIndex i, int freq ) {
-    i->freq = freq;
 }
 
 void setPos( IIndex i, int pos ) {
@@ -106,9 +86,9 @@ void update_frequency( char* partialPath, char* indexPath ) {
 
     FILE *indexFile, *partialFile, *reader;
 
-    IIndex last = new_empty(),
-           crnt = new_empty(),
-           ii   = new_empty();
+    IIndex last = new_ii(),
+           crnt = new_ii(),
+           ii   = new_ii();
 
     reader      = open_file( partialPath, "r" );
     partialFile = open_file( partialPath, "r" );

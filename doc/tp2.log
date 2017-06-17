@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.3)  16 JUN 2017 19:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.3)  17 JUN 2017 14:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1793,13 +1793,19 @@ Package biblatex Info: ... file 'tp2.bbl' found.
  (./tp2.bbl
 
 Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'testsite':
+(biblatex)                with 'remove-punc':
 (biblatex)                - Invalid format of field 'date' 
 (biblatex)                - Invalid format of field 'date'.
 
 
 Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'facebook':
+(biblatex)                with 'lipsum':
+(biblatex)                - Invalid format of field 'date' 
+(biblatex)                - Invalid format of field 'date'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'quicksort-wiki':
 (biblatex)                - Invalid format of field 'date' 
 (biblatex)                - Invalid format of field 'date'.
 
@@ -1882,67 +1888,87 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 54.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 54.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 56.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 58.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 58.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 58.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 58.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 60.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 60.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 62.
-Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 64.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 68.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 68.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 70.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 72.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 74.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 76.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 80.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 68.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 68.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 68.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 80.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 80.
  [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 70.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 70.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 82.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 82.
+ [2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 82.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 82.
  (./tp2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 70.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 70.
-Package rerunfilecheck Info: File `tp2.out' has not changed.
-(rerunfilecheck)             Checksum: E60C94CC5747CDFB00147053ACE3B515;296.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 82.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 82.
+
+
+Package rerunfilecheck Warning: File `tp2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `tp2.out':
+(rerunfilecheck)             Before: BB0D047848BD32973CE5C537441E5ECB;368
+(rerunfilecheck)             After:  0D07A97B4089A70F15EEF0FB8C704327;436.
 Package logreq Info: Writing requests to 'tp2.run.xml'.
 \openout1 = `tp2.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 70.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 82.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 38559 strings out of 493014
- 749120 string characters out of 6133337
- 1001594 words of memory out of 5000000
- 41549 multiletter control sequences out of 15000+600000
- 50309 words of font info for 62 fonts, out of 8000000 for 9000
+ 38569 strings out of 493014
+ 749310 string characters out of 6133337
+ 1003594 words of memory out of 5000000
+ 41554 multiletter control sequences out of 15000+600000
+ 53112 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,6n,101p,10486b,8995s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,6n,101p,10486b,8999s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc
-}</usr/local/texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/l
-ocal/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/te
-xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on tp2.pdf (1 page, 46464 bytes).
+}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/loc
+al/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2016/te
+xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/f
+onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
+/urw/times/utmri8a.pfb>
+Output written on tp2.pdf (2 pages, 60306 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 205 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
+ 15 named destinations out of 1000 (max. 500000)
+ 213 words of extra memory for PDF output out of 10000 (max. 10000000)
 

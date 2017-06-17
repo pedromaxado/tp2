@@ -53,6 +53,18 @@
 	
 	\section{Introdução}
 	
+	Neste trabalho temos como contexto o rapaz Hetelberto Topperson que gosta muito de conversar no \textit{ZipZop}, porém ele possui uma memória seletiva e consegue lembrar do assunto que conversou com uma pessoa, mas não da pessoa. Hetelberto gostaria que o \textit{ZipZop} permitisse buscas que retornem o trecho de uma conversa com alguém dado um uma palavra qualquer. Dado isso, Hetelberto pediu ajuda para construir um índice invertido, já que sua amiga Inês implementara o buscador.
+	
+	O problema consiste em, dado $D$ arquivos de conversa de Hetelberto presentes num diretório $E$ e $M$ bytes de primária disponível, devemos escrever o índice invertido cada palavra de todos os arquivos em $M$ no arquivo \textit{index} dentro do diretório $S$. A solução do problema se resume a ordenar as palavras e obter os parâmetros que compões o índice invertido. Para resolver este problema, os seguintes são necessários:
+	
+	\subsection{Ordenação Interna}
+	
+	Dado que para realizar uma ordenação externa com um limite de memória primária dado, é necessário saber como ordenar valores armazenados na memória primária. Para isso, escolhi o \textit{Quicksort} para ordenar os dados. Para uma breve descrição sobre este método, veja \cite{quicksort-wiki}.
+	
+	\subsection{Índice Invertido}
+	
+	O Índice Invertido, conhecido também como índice remissivo, é conhecido popularmente como aquela lista no final de livros, artigos, etc, de cunho acadêmico/informativo de palavras seguidas de números refernetes às páginas em que estas podem ser encontradas.
+	
 	\section{Metodologia}
 	
 	\section{Complexidade}

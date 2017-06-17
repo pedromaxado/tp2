@@ -1,6 +1,6 @@
 CC = gcc
 
-CFLAGS = -Iheaders -g -Wall -Wextra -Werror -pedantic -std=c99
+CFLAGS = -Iheaders -g -Wall -Wextra -Werror -pedantic -march=native -std=c99
 
 RM = rm -f
 

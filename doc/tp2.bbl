@@ -17,47 +17,68 @@
 \endgroup
 
 \sortlist[entry]{nty/global/}
-  \entry{testsite}{online}{}
+  \entry{remove-punc}{online}{}
     \name{author}{1}{}{%
-      {{hash=IG}{%
-         family={Inc.},
-         family_i={I\bibinitperiod},
-         given={Google},
-         given_i={G\bibinitperiod},
+      {{hash=AJ}{%
+         family={Anderson},
+         family_i={A\bibinitperiod},
+         given={John},
+         given_i={J\bibinitperiod},
       }}%
     }
-    \strng{namehash}{IG1}
-    \strng{fullhash}{IG1}
+    \strng{namehash}{AJ1}
+    \strng{fullhash}{AJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{I}
-    \field{sortinithash}{I}
-    \field{title}{Google}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{GoRewrite.com}
     \verb{url}
-    \verb http://www.google.com.br
+    \verb http://www.gorewrite.com/modify.html
     \endverb
     \warn{\item Invalid format of field 'date' \item Invalid format of field
   'date'}
   \endentry
 
-  \entry{facebook}{online}{}
+  \entry{lipsum}{online}{}
     \name{author}{1}{}{%
-      {{hash=ZM}{%
-         family={Zuckerberk},
-         family_i={Z\bibinitperiod},
-         given={Mark},
-         given_i={M\bibinitperiod},
+      {{hash=CMT}{%
+         family={Ciceros},
+         family_i={C\bibinitperiod},
+         given={Marcus\bibnamedelima Tulius},
+         given_i={M\bibinitperiod\bibinitdelim T\bibinitperiod},
       }}%
     }
-    \strng{namehash}{ZM1}
-    \strng{fullhash}{ZM1}
+    \strng{namehash}{CMT1}
+    \strng{fullhash}{CMT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{Z}
-    \field{sortinithash}{Z}
-    \field{title}{Facebook}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{Lorem Ipsum}
     \verb{url}
-    \verb http://www.facebook.com
+    \verb http://www.lipsum.com/
+    \endverb
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+  \endentry
+
+  \entry{quicksort-wiki}{online}{}
+    \name{author}{1}{}{%
+      {{hash=W}{%
+         family={Wikipedia},
+         family_i={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{W1}
+    \strng{fullhash}{W1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{title}{Quicksort - Wikipedia}
+    \verb{url}
+    \verb https://en.wikipedia.org/wiki/Quicksort
     \endverb
     \warn{\item Invalid format of field 'date' \item Invalid format of field
   'date'}

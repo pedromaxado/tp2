@@ -18,10 +18,6 @@ void close_file( FILE* fp ) {
         fclose(fp);
 }
 
-void write_ii( FILE* fp, IIndex i ) {
-    fprintf(fp, "%s,%d,%d,%d\n", getKey(i), *getFile(i), *getFreq(i), *getPos(i));
-}
-
 void write_partial_ii( FILE* fp, IIndex i ) {
     fprintf(fp, "%s %d %d\n", getKey(i), *getFile(i), *getPos(i));
 }

@@ -7,13 +7,11 @@
 #define PATH_SIZE 256
 #define TMP_PATH_SIZE 16
 #define MAX_FILES 16
-#define II_SIZE 32
+#define II_SIZE 28
 
 typedef struct inverted_index* IIndex;
 
-IIndex new_ii( char* _key, int _file, int _freq, int _pos );
-
-IIndex new_empty();
+IIndex new_ii();
 
 void delete_ii( IIndex i );
 
