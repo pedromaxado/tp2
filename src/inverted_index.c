@@ -145,6 +145,10 @@ void update_frequency( char* partialPath, char* indexPath ) {
     close_file( reader      );
     close_file( partialFile );
     close_file( indexFile   );
+
+    delete_ii( last );
+    delete_ii( crnt );
+    delete_ii( ii   );
 }
 
 void make_index( int *_n, int *_memSize, const char* _chatsPaths, const char* _indexPath ) {

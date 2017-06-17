@@ -104,8 +104,9 @@ int sort_chats( int *_n, int *_memSize, const char* _chatsPath ) {
     FILE *chatFile,
          *output;
 
-    char *chatPath = ( char* ) malloc( TMP_PATH_SIZE * sizeof(char) ),
+    char *chatPath = ( char* ) malloc( PATH_SIZE     * sizeof(char) ),
          *outPath  = ( char* ) malloc( TMP_PATH_SIZE * sizeof(char) );
+
     int i,
         chunk,
         chunkSize   = *_memSize / II_SIZE,
