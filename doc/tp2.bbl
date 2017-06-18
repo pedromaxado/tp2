@@ -17,7 +17,7 @@
 \endgroup
 
 \sortlist[entry]{nty/global/}
-  \entry{remove-punc}{online}{}
+  \entry{texttool}{online}{}
     \name{author}{1}{}{%
       {{hash=AJ}{%
          family={Anderson},
@@ -35,6 +35,31 @@
     \field{title}{GoRewrite.com}
     \verb{url}
     \verb http://www.gorewrite.com/modify.html
+    \endverb
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+  \endentry
+
+  \entry{ext-mergesort}{online}{}
+    \name{author}{1}{}{%
+      {{hash=UoCB}{%
+         prefix={University\bibnamedelima of},
+         prefix_i={U\bibinitperiod\bibinitdelim o\bibinitperiod},
+         family={California},
+         family_i={C\bibinitperiod},
+         given={Berkeley},
+         given_i={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CBUo1}
+    \strng{fullhash}{CBUo1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{Midterm Review}
+    \verb{url}
+    \verb http://db.cs.berkeley.edu/dbcourse/section/mreview2.pdf
     \endverb
     \warn{\item Invalid format of field 'date' \item Invalid format of field
   'date'}
@@ -58,6 +83,27 @@
     \field{title}{Lorem Ipsum}
     \verb{url}
     \verb http://www.lipsum.com/
+    \endverb
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+  \endentry
+
+  \entry{ext-sorting}{online}{}
+    \name{author}{1}{}{%
+      {{hash=W}{%
+         family={Wikipedia},
+         family_i={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{W1}
+    \strng{fullhash}{W1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{title}{External Sorting}
+    \verb{url}
+    \verb https://en.wikipedia.org/wiki/External_sorting
     \endverb
     \warn{\item Invalid format of field 'date' \item Invalid format of field
   'date'}
